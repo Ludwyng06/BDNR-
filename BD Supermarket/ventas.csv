@@ -1,0 +1,11 @@
+_id,cliente_id,fecha,items,total
+1,1,2025-09-01,"[{""producto_id"":1,""cantidad"":2},{""producto_id"":11,""cantidad"":5}]",12500
+2,2,2025-09-02,"[{""producto_id"":6,""cantidad"":3},{""producto_id"":26,""cantidad"":2}]",17400
+3,3,2025-09-02,"[{""producto_id"":15,""cantidad"":4},{""producto_id"":22,""cantidad"":2}]",14600
+4,4,2025-09-03,"[{""producto_id"":10,""cantidad"":1},{""producto_id"":18,""cantidad"":3}]",13400
+5,5,2025-09-03,"[{""producto_id"":30,""cantidad"":6},{""producto_id"":3,""cantidad"":2}]",22000
+6,6,2025-09-04,"[{""producto_id"":7,""cantidad"":2},{""producto_id"":21,""cantidad"":1}]",23300
+7,7,2025-09-05,"[{""producto_id"":17,""cantidad"":5},{""producto_id"":24,""cantidad"":1}]",13700
+8,8,2025-09-06,"[{""producto_id"":8,""cantidad"":3},{""producto_id"":19,""cantidad"":2}]",15800
+9,9,2025-09-07,"[{""producto_id"":14,""cantidad"":4},{""producto_id"":25,""cantidad"":1}]",29300
+10,10,2025-09-07,"[{""producto_id"":2,""cantidad"":2},{""producto_id"":27,""cantidad"":3}]",18800
