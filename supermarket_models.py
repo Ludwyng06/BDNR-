@@ -224,3 +224,51 @@ class SupermarketReporteModel:
         ]
         
         return list(SupermarketReporteModel.collection.ventas.aggregate(pipeline))
+
+    @staticmethod
+    def generar_ventas_con_productos_unidos():
+        """
+        Pipeline de agregación que une ventas con productos (equivalente a joinColecciones.js).
+        Descompone los items de cada venta y los une con la información de productos.
+        """
+        pipeline = [
+            {
+                "$unwind": "$items"
+            },
+            {
+                "$lookup": {
+                    "from": "productos",
+                    "localField": "items.producto_id",
+                    "foreignField": "_id",
+                    "as": "producto"
+                }
+            },
+            {
+                "$unwind": "$producto"
+            },
+            {
+                "$group": {
+                    "_id": "$_id",
+                    "cliente_id": {"$first": "$cliente_id"},
+                    "fecha": {"$first": "$fecha"},
+                    "total": {"$first": "$total"},
+                    "productos": {
+                        "$push": {
+                            "nombre": "$producto.nombre",
+                            "precio": "$producto.precio",
+                            "cantidad": "$items.cantidad"
+                        }
+                    }
+                }
+            },
+            {
+                "$project": {
+                    "cliente_id": 1,
+                    "fecha": 1,
+                    "total": 1,
+                    "productos": 1
+                }
+            }
+        ]
+        
+        return list(SupermarketReporteModel.collection.ventas.aggregate(pipeline))

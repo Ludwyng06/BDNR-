@@ -112,7 +112,8 @@ def api_info():
                 "productos_por_categoria": "/supermarket/productos/categoria/<id>",
                 "ventas": "/supermarket/ventas",
                 "reporte_ventas_detallado": "/supermarket/reportes/ventas-detallado",
-                "reporte_ventas_por_categoria": "/supermarket/reportes/ventas-por-categoria"
+                "reporte_ventas_por_categoria": "/supermarket/reportes/ventas-por-categoria",
+                "reporte_ventas_con_productos": "/supermarket/reportes/ventas-con-productos"
             }
         },
         "filtros_disponibles": {

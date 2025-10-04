@@ -154,3 +154,21 @@ def get_reporte_ventas_por_categoria():
             "success": False,
             "error": str(e)
         }), 500
+
+@supermarket_bp.route("/supermarket/reportes/ventas-con-productos", methods=["GET"])
+def get_ventas_con_productos():
+    """
+    Reporte de ventas con productos unidos (equivalente a joinColecciones.js)
+    """
+    try:
+        reporte = SupermarketReporteModel.generar_ventas_con_productos_unidos()
+        return jsonify({
+            "success": True,
+            "total_ventas": len(reporte),
+            "data": reporte
+        }), 200
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
